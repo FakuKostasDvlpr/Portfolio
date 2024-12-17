@@ -1,0 +1,78 @@
+---
+import LabelHover from "../LabelHover.astro";
+// import Flutter from "../../../public/svgs/techs/Flutter.astro"
+import React from "../../../public/svgs/techs/React.astro";
+// import Android from "../../../public/svgs/techs/Android.astro"
+// import Csharp from "../../../public/svgs/techs/Csharp.astro"
+// import Compose from "../../../public/svgs/techs/Compose.astro"
+import MongoDB from "../../../public/svgs/techs/MongoDB.astro";
+import Csharp from "../../../public/svgs/techs/Csharp.astro";
+import Javascript from "../../../public/svgs/techs/Javascript.astro";
+import Nodejs from "../../../public/svgs/techs/Nodejs.astro";
+import Sql from "../../../public/svgs/techs/Sql.astro";
+import Express from "../../../public/svgs/techs/Express.astro";
+import Netcore from "../../../public/svgs/techs/Netcore.astro";
+import Typescript from "../../../public/svgs/techs/Typescript.astro";
+import Tailwind from "../../../public/svgs/techs/estilado/Tailwind.astro";
+---
+
+<div
+  class="flex flex-row min-w-full justify-center items-center gap-6 sm:gap-8"
+>
+  <div class="w-[260px] h-[1px] bg-white"></div>
+  <p class="text-xl sm:text-2xl font-bold font-syne">Tecnologías</p>
+  <div class="w-[260px] h-[1px] bg-white"></div>
+</div>
+
+<div class="flex flex-col gap-8 min-w-full justify-center items-center">
+  <!-- First Row -->
+  <div
+    class="flex cursor-pointer flex-row gap-5 sm:gap-12 flex-wrap justify-center items-center"
+  >
+    <div class="label">
+      <LabelHover title="React" />
+      <React />
+    </div>
+    <div class="label">
+      <LabelHover title="Netcore" />
+      <Netcore />
+    </div>
+    <div class="label">
+      <LabelHover title="Tailwind" />
+      <Tailwind />
+    </div>
+    <div class="label">
+      <LabelHover title="Nodejs" />
+      <Nodejs />
+    </div>
+    <div class="label">
+      <LabelHover title="Express" />
+      <Express />
+    </div>
+  </div>
+  <!-- Second Row -->
+  <div
+    class="flex cursor-pointer flex-row gap-5 sm:gap-12 flex-wrap justify-center items-center"
+  >
+  <div class="label">
+    <LabelHover title="SQL" />
+    <Sql />
+  </div>
+    <div class="label">
+      <LabelHover title="Javascript" />
+      <Javascript />
+    </div>
+    <div class="label">
+      <LabelHover title="Typescript" />
+      <Typescript />
+    </div>
+    <div class="label">
+      <LabelHover title="Csharp" />
+      <Csharp />
+    </div>
+    <div class="label">
+      <LabelHover title="MongoDB" />
+      <MongoDB />
+    </div>
+  </div>
+</div>

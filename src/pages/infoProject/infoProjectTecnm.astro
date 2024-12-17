@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import BodyProject from "../../components/InfoProject/BodyProject.astro";
+import NameProject from "../../components/InfoProject/NameProject.astro";
+import '@fontsource-variable/syne';
+---
+
+<Layout title="Proyectos - TecNM Software">
+  <main class="flex flex-col items-center min-w-full pt-12 xsm:pt-20 gap-14 px-4">
+    <NameProject 
+    title="TecNM Software" 
+    tech1="JavaScript" 
+    tech2="PHP" 
+    tech3="MySQL"
+    rol="Desarrollador Backend"
+    />
+    <BodyProject 
+    parrafo1="Software de gestión académica desarrollado con la finalidad de agilizar los procesos académicos que se llevaban a cabo en el instituto tecnológico de chiná en el estado de campeche."
+    parrafo2="Tuve la oportunidad de participar en el desarrollo de esta aplicación como desarrollador backend durante el tiempo que estuve cursando la carrera de ingeniería informática en dicha universidad."
+    parrafo3="La aplicación permite realizar diversos procesos de 3 subáreas dentro del área académica (tutorías, actividades complementarias y actividades extraescolares) los cuales son necesarios para el progreso académico de los estudiantes."
+    parrafo4="Participé en actividades como mejorar y optimizar las consultas que se realizaban a la base de datos, las cuales se hacían mediante Mysql, me encargé de que se mantuviera la integridad de los datos, mejoré y actualicé características ya existentes y creé otras nuevas que permitieran la mejora en el flujo de trabajo en las respectivas áreas."
+    img="https://i.imgur.com/FKEFaqW.jpg" 
+    clasesGithub=" hidden bg-secondary-color rounded-xl w-max px-4 py-3 flex border border-terciary-color justify-center items-center hover:bg-teciary-color hover:border-green-lime duration-300" 
+    clasesWeb="hidden bg-secondary-color rounded-xl w-max px-4 py-3 flex border border-terciary-color justify-center items-center hover:bg-teciary-color hover:border-green-lime duration-300"/>
+  </main>
+  <Footer/>
+</Layout>

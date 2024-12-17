@@ -1,0 +1,29 @@
+---
+import Footer from "../../components/Footer.astro";
+import BodyProject from "../../components/InfoProject/BodyProject.astro";
+import NameProject from "../../components/InfoProject/NameProject.astro";
+import Layout from "../../layouts/Layout.astro";
+import '@fontsource-variable/syne';
+---
+
+<Layout title="Proyectos - Administrador de Rentas">
+  <main class="flex flex-col items-center min-w-full pt-12 xsm:pt-20 gap-14 px-4">
+    <NameProject 
+    title="Administrador de Rentas" 
+    tech1="Laravel" 
+    tech2="PHP" 
+    tech3="MySQL" 
+    rol="Desarrollador FullStack"
+    />
+    <BodyProject 
+    parrafo1="Esta aplicación la desarrollé como proyecto final de una asignatura que llevaba en la univerisidad, la cual me permitió entender y aprender sobre el uso de el framework Laravel."
+    parrafo2="En cuanto a mi participación durante el desarrollo de este sistema, abarca desde el planteamiento de la idea, el diseño de la interfaz, el desarrollo del frontend y el backend y el diseño y la implementación de la base de datos." 
+    parrafo3="La idea principal para el desarrollo de este proyecto, fue crear un sistema que le permitiera a un negocio de renta de bicicletas contar con un inventario de todas las bicicletas y equipo de ciclismo, así como tambien una plataforma en donde los clientes pudieran consultar la disponibilidad de esas bicicletas y poder realizar su apartado desde la misma plataforma, para posteriormente acudir al local y realizar la renta de eso mismo que ya apartaron anteriormente."
+    parrafo4="Desarrollar este proyecto implicaba considerar la creación de 3 CRUDS, uno para los equipos de ciclismo, otro para las bicicletas y otro para agregar administradores que pudieran manipular información dentro del sistema. También se consideró el manejo de roles dentro de la aplicación, ya que en ella podián acceder 2 tipos de usuarios, clientes y administradores, siendo los clientes los que pueden verificar la disponibilidad de las bicicletas, y los administradores los que pueden administrar y manipular la información, por lo que se necesitaba una adecuada implementación de los roles, para evitar que los clientes pudieran acceder a las opciones que los administradores tienen disponibles."
+    github="https://github.com/FakuKostasDvlpr/proyectobic" 
+    img="https://i.imgur.com/koQVwgW.png" 
+    clasesGithub="bg-secondary-color rounded-xl w-max px-4 py-3 flex border border-terciary-color justify-center items-center hover:bg-teciary-color hover:border-green-lime duration-300" 
+    clasesWeb="hidden bg-secondary-color rounded-xl w-max px-4 py-3 flex border border-terciary-color justify-center items-center hover:bg-teciary-color hover:border-green-lime duration-300"/>
+  </main>
+  <Footer/>
+</Layout>

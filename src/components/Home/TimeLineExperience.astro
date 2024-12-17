@@ -1,0 +1,138 @@
+<div id="experience-container" class="w-full flex flex-col gap-5 overflow-hidden relative">
+  <div id="experience-slider" class="flex transition-transform duration-500">
+    <!-- Las tarjetas se generarán dinámicamente aquí -->
+  </div>
+  <!-- Controles de navegación -->
+  <button id="prev-btn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-full hidden">&#8592;</button>
+  <button id="next-btn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-full">&#8594;</button>
+</div>
+
+<script>
+  // Datos de las experiencias
+  const experiences = [
+    {
+      title: "Desarrollador Web Shopify y WordPress",
+      link: "https://www.linkedin.com/company/refindable/posts/?feedView=all",
+      company: "Refindable",
+      date: "12-2024 - Actualidad",
+      location: "Argentina, Buenos Aires",
+      details: [
+        "Diseño, desarrollo y mantenimiento de sitios web en Shopify y WordPress, creando nuevas secciones, solucionando problemas y colaborando con clientes para implementar mejoras y cumplir sus objetivos digitales."
+      ]
+    },
+    {
+      title: "Project Manager",
+      link: "https://www.linkedin.com/company/baekyco/posts/?feedView=all",
+      company: "BaekyCo",
+      date: "11-2024 - Actualidad",
+      location: "Argentina, Buenos Aires",
+      details: [
+        "Diseño y desarrollo de páginas web desde cero, colaborando con el equipo de marketing para aportar ideas creativas y técnicas.",
+        "Trabajo tanto en el frontend como en el backend (PHP), con planes de migración a nuevas tecnologías.",
+        "Participación en reuniones con clientes para ofrecer soluciones y recomendaciones estratégicas que mejoren la experiencia del usuario y optimicen el producto."
+      ]
+    },
+    {
+      title: "Frontend Developer",
+      link: "https://www.linkedin.com/company/sancor/posts/?feedView=all",
+      company: "Sancor",
+      date: "09-2024 - 12-24",
+      location: "Argentina, Buenos Aires",
+      details: [
+        "Creación y mantenimiento de la interfaz de usuario con Shopify Liquid: Desarrollo y personalización de secciones de la tienda en línea.",
+        "Implementación de diseño responsive y aseguramiento de la funcionalidad en dispositivos móviles y desktop.",
+        "Mantenimiento y optimización de la tienda en Shopify: Supervisión del rendimiento del sitio, actualizaciones y corrección de errores."
+      ]
+    },
+    {
+      title: "Analista Programador C# .NET SQL",
+      link: "https://www.linkedin.com/company/gms-sa/posts/?feedView=all",
+      company: "GMS.SA",
+      date: "06-2024 - 09-2024",
+      location: "Buenos Aires, Argentina",
+      details: [
+        "Desarrollo de interfaces de usuario con WPF y creación de lógica de negocio con C#.",
+        "Gestión de bases de datos con SQL, pruebas, tratamiento de errores y optimización del rendimiento.",
+        "Colaboración con equipos multidisciplinares y documentación técnica detallada."
+      ]
+    },
+    {
+      title: "Fullstack Developer",
+      link: "https://www.linkedin.com/company/drewolf/",
+      company: "Drewolf",
+      date: "07-2023 - 07-2024",
+      location: "Argentina",
+      details: [
+        "Desarrollo de interfaces de usuario con React y TypeScript.",
+        "Creación de servicios y APIs con C#, gestión de bases de datos en MongoDB y optimización del rendimiento.",
+        "Colaboración en equipos multidisciplinares, documentación técnica y aseguramiento de la calidad del software."
+      ]
+    },
+    {
+      title: "Frontend Developer",
+      company: "Fiverr (Freelancer)",
+      date: "12-2023 - Actualidad",
+      details: [
+        "Creación y mantenimiento de la interfaz de usuario con React.js.",
+        "Implementación de componentes interactivos, diseño responsive y mantenimiento del servidor con Node.js y Express.js.",
+        "Consultas y operaciones CRUD en MongoDB, además de pruebas unitarias e integración para frontend y backend."
+      ]
+    }
+  ];
+
+  // Generar HTML dinámico
+  const slider = document.getElementById("experience-slider");
+
+  experiences.forEach((exp, index) => {
+    const section = document.createElement("section");
+    section.className = "w-1/2 flex-none flex flex-row justify-between border border-terciary-color gap-7 px-10 py-10 rounded-[40px] flex-wrap";
+    section.style.flex = "0 0 50%"; // Mostrar dos tarjetas a la vez
+
+    const header = `
+      <div class="flex flex-col gap-2">
+        <h4 class="font-extrabold text-2xl text-green-lime">${exp.title}</h4>
+        <h5 class="font-bold text-base text-color-text2 text leading-8">
+          <a href="${exp.link}" target="_blank">${exp.company}</a><br>
+          ${exp.date}${exp.location ? ` | ${exp.location}` : ""}
+        </h5>
+      </div>
+    `;
+
+    const details = `
+      <p class="hidden md:block w-full font-normal text-lg text-white duration-500">
+        ${exp.details.map(detail => `● ${detail}`).join("<br>")}
+      </p>
+    `;
+
+    section.innerHTML = header + details;
+    slider.appendChild(section);
+  });
+
+  // Control deslizante
+  let currentIndex = 0;
+
+  const updateSlider = () => {
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    // Actualizar visibilidad de botones
+    document.getElementById("prev-btn").classList.toggle("hidden", currentIndex === 0);
+    document.getElementById("next-btn").classList.toggle("hidden", currentIndex >= Math.ceil(experiences.length / 2) - 1);
+  };
+
+  document.getElementById("prev-btn").addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  });
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    if (currentIndex < Math.ceil(experiences.length / 2) - 1) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
+
+  // Inicializar el slider
+  updateSlider();
+</script>

@@ -1,0 +1,28 @@
+---
+import Footer from "../../components/Footer.astro";
+import BodyProject from "../../components/InfoProject/BodyProject.astro";
+import NameProject from "../../components/InfoProject/NameProject.astro";
+import Layout from "../../layouts/Layout.astro";
+import '@fontsource-variable/syne';
+---
+
+<Layout title="Proyectos - REST API">
+  <main class="flex flex-col items-center min-w-full pt-12 xsm:pt-20 gap-14 px-4">
+    <NameProject 
+    title="REST API" 
+    tech1="NodeJs" 
+    tech2="ExpressJs" 
+    tech3="MySQL" 
+    rol="Desarrollador Backend"
+    />
+    <BodyProject 
+    parrafo1="Este proyecto lo desarrollé como práctica para aprender un poco sobre el uso de nodejs y expressjs en conjunto con MySQL, logrando crear el típico CRUD que le permite a un cliente poder agregar y manipular información de una base de datos."
+    parrafo2="Con el desarrollo de esta REST API logré entender un poco más conceptos que no tenia my claro en cuanto al funcionamiento de un API, y me permitió asentar las bases necesarias para posteriormente poder desarrollar proyectos más completos y complejos."
+    parrafo3="Esta REST API cuenta con caracteristicas básicas pero fundamentales para poder conciderar a un API como RESTfull. Entre estas características están el uso de la arquitectura cliente-servidor, lo cual permite realizar las peticiones mediante los métodos principales de HTTP (GET, POST, DELETE, PUT)." 
+    github="https://github.com/FakuKostasDvlpr/nodejs-mysql-restapi-test" 
+    img="https://i.imgur.com/URWA81V.png" 
+    clasesGithub="bg-secondary-color rounded-xl w-max px-4 py-3 flex border border-terciary-color justify-center items-center hover:bg-teciary-color hover:border-green-lime duration-300" 
+    clasesWeb="hidden bg-secondary-color rounded-xl w-max px-4 py-3 flex border border-terciary-color justify-center items-center hover:bg-teciary-color hover:border-green-lime duration-300"/>
+  </main>
+  <Footer/>
+</Layout>
