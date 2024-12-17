@@ -78,7 +78,25 @@
   // Generación de tarjetas dinámicamente
   const container = document.getElementById("experience-container");
 
-  experiences.forEach(exp => {
+  // experiences.forEach(exp => {
+  //   const card = document.createElement("section");
+  //   card.className = "w-full md:w-[48%] flex flex-col border border-terciary-color gap-7 px-6 py-6 rounded-lg bg-gray-700";
+
+  //   card.innerHTML = `
+  //     <div class="flex flex-col gap-2">
+  //       <h4 class="font-extrabold text-2xl text-green-lime">${exp.title}</h4>
+  //       <h5 class="font-bold text-base text-color-text2 leading-8">
+  //         ${exp.link ? `<a href="${exp.link}" target="_blank">${exp.company}</a>` : exp.company}<br>
+  //         ${exp.date}${exp.location ? ` | ${exp.location}` : ""}
+  //       </h5>
+  //     </div>
+  //     <p class="w-full font-normal text-lg text-white">
+  //       ${exp.details.map(detail => `● ${detail}`).join("<br>")}
+  //     </p>
+  //   `;
+  //   container.appendChild(card);
+  // });
+  const experiencias= experiences.forEach(exp => {
     const card = document.createElement("section");
     card.className = "w-full md:w-[48%] flex flex-col border border-terciary-color gap-7 px-6 py-6 rounded-lg bg-gray-900";
 
@@ -94,6 +112,7 @@
         ${exp.details.map(detail => `● ${detail}`).join("<br>")}
       </p>
     `;
-    container.appendChild(card);
+    if (container) { container.appendChild(card); }
   });
+  
 </script>
